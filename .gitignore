@@ -3,4 +3,4 @@ notebooks/UnRAR.exe
 data/raw/
 data/clean/
 data/processed/
-test.ipynb
+test.py
