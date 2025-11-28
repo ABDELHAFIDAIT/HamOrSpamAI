@@ -27,3 +27,15 @@ if st.button("Prédire") :
             st.error("Résultat : **SPAM détecté !**")
         else:
             st.success("Résultat : **Email légitime (HAM)**")
+            
+        st.markdown("---")
+        st.subheader("Métriques de prédiction")
+        
+        proba = model.predict_proba(X)[0]
+
+        st.write("#### Probabilités par classe")
+        st.write(f"- HAM (0) : {float(proba[0])}")
+        st.write(f"- SPAM (1) : {float(proba[1])}")
+
+        confiance = float(np.max(proba))
+        st.write(f"#### Score de confiance : **{confiance:.4f}**")
